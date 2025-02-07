@@ -5,7 +5,6 @@ console.log('Starting SSR for Shell');
 (async () => {
 
   await initNodeFederation({
-    remotesOrManifestUrl: {},
     relBundlePath: '../browser/',
   });
 
