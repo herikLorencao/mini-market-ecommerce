@@ -1,13 +1,16 @@
-import { initNodeFederation } from '@softarc/native-federation-node';
+import {initNodeFederation} from '@softarc/native-federation-node';
 
 console.log('Starting SSR for Shell');
 
 (async () => {
 
-  await initNodeFederation({
-    relBundlePath: '../browser/',
-  });
+    await initNodeFederation({
+        remotesOrManifestUrl: {
+            'mini-market-product': 'http://localhost:4201/remoteEntry.json',
+        },
+        relBundlePath: '../browser/',
+    });
 
-  await import('./bootstrap-server');
+    await import('./bootstrap-server');
 
 })();
